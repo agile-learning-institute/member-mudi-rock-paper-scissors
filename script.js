@@ -3,27 +3,26 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    result = Math.floor(Math.random() * 3) + 1;
+    const result = Math.floor(Math.random() * 3) + 1;
 
     if (result === 1)
         {
-            console.log("rock");
+            return "rock";
         }
     else if (result === 2)
         {
-            console.log("paper");
+            return "paper";
         }
     else
         {
-            console.log("scissors");
+            return "scissors";
         }
 }
 
-console.log(getComputerChoice());
 
 function getHumanChoice() {
     let text;
-    let choice = prompt("Enter your choice:");
+    let choice = prompt("Enter your choice:").toLowerCase();
 
     switch (choice) {
         case "rock":
@@ -42,4 +41,33 @@ function getHumanChoice() {
     return text;
 }
 
-console.log(getHumanChoice());
+
+
+
+function playRound(humanChoice, computerChoice) {
+    
+    if ((humanChoice === "rock" && computerChoice === "rock") ||
+        (humanChoice === "paper" && computerChoice === "paper") ||
+        (humanChoice === "scissors" && computerChoice === "scissors")) {
+            console.log("No winner for this round");
+        }
+    else if ((humanChoice === "rock" && computerChoice === "paper") ||
+             (humanChoice === "paper" && computerChoice === "scissors") ||
+             (humanChoice === "scissors" && computerChoice === "rock")) {
+                computerScore++;
+                console.log("Computer wins here");
+             }
+    else
+        {
+            humanScore++;
+            console.log("You win here");
+        }
+}
+
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+
