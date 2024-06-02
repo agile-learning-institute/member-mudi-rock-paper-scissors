@@ -1,4 +1,3 @@
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -20,31 +19,30 @@ function getComputerChoice() {
 }
 
 
+
 function getHumanChoice() {
-    let text;
-    let choice = prompt("Enter your choice:").toLowerCase();
+    let option;
 
-    switch (choice) {
-        case "rock":
-            text = "rock";
-            break;
-        case "paper":
-            text = "paper";
-            break;
-        case "scissors":
-            text = "scissors";
-            break;
-        default:
-            text = "Your entered choice not found";
+    while (true)
+    {
+        option = prompt("Type in any of these: rock, paper, or scissors:").toLowerCase();
+
+        if (option === "rock" || option === "paper" || option === "scissors")
+            {
+            return option;
+            }
+        else
+            {
+            alert("You choose a wrong option! Choose again");
+            }
     }
-
-    return text;
 }
 
 
 
 
 function playRound(humanChoice, computerChoice) {
+
     
     if ((humanChoice === "rock" && computerChoice === "rock") ||
         (humanChoice === "paper" && computerChoice === "paper") ||
@@ -62,6 +60,7 @@ function playRound(humanChoice, computerChoice) {
             humanScore++;
             console.log("You win here");
         }
+
 }
 
 
