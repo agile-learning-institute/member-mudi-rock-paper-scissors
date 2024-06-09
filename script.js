@@ -2,13 +2,14 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
+    let plays = ["rock", "paper", "scissors"];
     const result = Math.floor(Math.random() * 3) + 1;
     if (result === 1) {
-            return "rock";
+            return plays[0];
     } else if (result === 2) {
-            return "paper";
+            return plays[1];
     } else {
-            return "scissors";
+            return plays[2];
     }
 }
 
