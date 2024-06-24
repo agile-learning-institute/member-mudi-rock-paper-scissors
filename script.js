@@ -13,17 +13,6 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    let option;
-    while (true) {
-        option = prompt("Type in any of these: rock, paper, or scissors:").toLowerCase();
-    if (option === "rock" || option === "paper" || option === "scissors") {
-            return option;
-        } else {
-            alert("You choose a wrong option! Choose again");
-        }
-    }
-}
 
 function playRound(humanChoice, computerChoice) {
     console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
