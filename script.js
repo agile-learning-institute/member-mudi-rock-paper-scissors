@@ -15,17 +15,31 @@ function getComputerChoice() {
 
 
 function playRound(humanChoice, computerChoice) {
-    console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
-    if (humanChoice === computerChoice) {
-            console.log("No winner for this round");
-    } else if ((humanChoice === "rock" && computerChoice === "paper") ||
-             (humanChoice === "paper" && computerChoice === "scissors") ||
-             (humanChoice === "scissors" && computerChoice === "rock")) {
-                computerScore++;
-                console.log("Computer wins here");
-    } else {
+        const resultBox = document.getElementsByClassName('result');
+        let resultText = `Human: ${humanChoice}, Computer: ${computerChoice}. `;
+        
+        if (humanChoice === computerChoice) {
+            resultText += "No winner for this round.";
+        } else if ((humanChoice === "rock" && computerChoice === "paper") ||
+                   (humanChoice === "paper" && computerChoice === "scissors") ||
+                   (humanChoice === "scissors" && computerChoice === "rock")) {
+            computerScore++;
+            resultText += "Computer wins this round.";
+        } else {
             humanScore++;
-            console.log("You win here");
+            resultText += "You win this round.";
+        }
+    
+        resultText += `<br>Scores -> Human: ${humanScore}, Computer: ${computerScore}`;
+    
+        if (humanScore === 5) {
+            resultText += "<br><strong>You win the game, Congratulations!</strong>";
+            resetGame();
+        } else if (computerScore === 5) {
+            resultText += "<br><strong>Computer wins the game!</strong>";
+            resetGame();
+        }
+        
+        resultBox.innerHTML = resultText;
     }
-        console.log(`Scores -> Human: ${humanScore}, Computer: ${computerScore}`);
-}
+
