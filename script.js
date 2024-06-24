@@ -8,14 +8,8 @@ function resetGame() {
 
 function getComputerChoice() {
     let plays = ["rock", "paper", "scissors"];
-    const result = Math.floor(Math.random() * 3) + 1;
-    if (result === 1) {
-            return plays[0];
-    } else if (result === 2) {
-            return plays[1];
-    } else {
-            return plays[2];
-    }
+    const result = Math.floor(Math.random() * 3);
+    return plays[result];
 }
 
 
@@ -47,4 +41,8 @@ function playRound(humanChoice, computerChoice) {
         
     resultBox.innerHTML = resultText;
 }
+
+document.getElementsByClassName('rock').addEventListener('click', () => playRound('rock', getComputerChoice()));
+document.getElementsByClassName('paper').addEventListener('click', () => playRound('paper', getComputerChoice()));
+document.getElementsByClassName('scissors').addEventListener('click', () => playRound('scissors', getComputerChoice()));
 
