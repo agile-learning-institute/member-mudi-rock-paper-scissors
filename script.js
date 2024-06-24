@@ -40,20 +40,3 @@ function playRound(humanChoice, computerChoice) {
     }
         console.log(`Scores -> Human: ${humanScore}, Computer: ${computerScore}`);
 }
-
-function playGame() {
-    const times = 5;
-    for (let i = 0; i < times; i++) {
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
-            playRound(humanSelection, computerSelection);
-    } 
-    if (humanScore > computerScore) {
-            console.log("You win, Congratulations!");
-    } else if (humanScore < computerScore) {
-            console.log("Computer wins!");
-    } else {
-            console.log("A tie game! No winner no loser");
-    }
-}
-playGame();
