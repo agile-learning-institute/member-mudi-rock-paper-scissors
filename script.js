@@ -14,7 +14,7 @@ function getComputerChoice() {
 
 
 function playRound(humanChoice, computerChoice) {
-    const resultBox = document.getElementsByClassName('result');
+    const resultBox = document.getElementById('result');
     let resultText = `Human: ${humanChoice}, Computer: ${computerChoice}. `;
         
     if (humanChoice === computerChoice) {
@@ -42,7 +42,7 @@ function playRound(humanChoice, computerChoice) {
     resultBox.innerHTML = resultText;
 }
 
-document.getElementsByClassName('rock').addEventListener('click', () => playRound('rock', getComputerChoice()));
-document.getElementsByClassName('paper').addEventListener('click', () => playRound('paper', getComputerChoice()));
-document.getElementsByClassName('scissors').addEventListener('click', () => playRound('scissors', getComputerChoice()));
+document.getElementById('rock').addEventListener('click', () => playRound('rock', getComputerChoice()));
+document.getElementById('paper').addEventListener('click', () => playRound('paper', getComputerChoice()));
+document.getElementById('scissors').addEventListener('click', () => playRound('scissors', getComputerChoice()));
 
