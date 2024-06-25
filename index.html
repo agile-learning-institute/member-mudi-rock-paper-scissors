@@ -9,9 +9,9 @@
 <body>
     <h1>JavaScript Project: Rock Paper Scissors Game</h1>
     <div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button id="rock" onclick="playRound('rock', getComputerChoice())">Rock</button>
+        <button id="paper" onclick="playRound('paper', getComputerChoice())">Paper</button>
+        <button id="scissors" onclick="playRound('scissors', getComputerChoice())">Scissors</button>
     </div>
     <div id="result"></div>
     <script src="script.js"></script>
