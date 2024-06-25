@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>JavaScript Project: Rock Paper Scissors Game</h1>
+    <div>
+        <button id="rock" onclick="playRound('rock', getComputerChoice())">Rock</button>
+        <button id="paper" onclick="playRound('paper', getComputerChoice())">Paper</button>
+        <button id="scissors" onclick="playRound('scissors', getComputerChoice())">Scissors</button>
+    </div>
+    <div id="result"></div>
     <script src="script.js"></script>
 </body>
 </html>
